@@ -1,0 +1,30 @@
+@model ICollection<ProvaDs2.Models.Compartimento>
+ 
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Número</th>
+      <th scope="col">Tamanho</th>
+      <th scope="col">Disponível</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.NumeroId</td>
+            <td>@item.Tamanho</td>
+            <td>@item.Disponivel</td>
+            <td>
+                <form method="post" asp-controller="Compartimentos" asp-action="Alocar">
+                    <input type="hidden" name="compartimentoid" value="@item.NumeroId">
+                    <input type="text" name="CPF" placeholder="Meu CPF">
+                    <button type="submit" class="btn btn-primary">Alocar</button>
+                </form>
+            </td>
+        </tr>
+    }
+  </tbody>
+</table>
+

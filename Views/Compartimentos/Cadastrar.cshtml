@@ -1,0 +1,24 @@
+@model ProvaDs2.Models.Compartimento
+ 
+@{
+    ViewData["Title"] = "Cadastrar compartimento";
+}
+ 
+<h2>Cadastrar Compartimentos</h2>
+<form method="post" asp-controller="Compartimentos" asp-action="Cadastrar">
+  <div class="mb-3">
+    <label asp-for="Tamanho" class="form-label"></label>
+    <input asp-for="Tamanho" class="form-control">
+    <span asp-validation-for="Tamanho" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label for="cpfdodono" class="form-label">CPF do Administrador</label>
+    <input type="text" name="CPF" id="cpfdodono" class="form-control">
+    <span for="cpfdodono" class="text-danger"></span>
+  </div>
+  <input type="hidden" name="ArmarioId" value="@ViewBag.ArmarioId">
+  <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>
+ 
+
+

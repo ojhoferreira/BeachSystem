@@ -1,0 +1,28 @@
+@model ICollection<ProvaDs2.Models.Armario>
+ 
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Armarios</th>
+      <th scope="col">Ponto X</th>
+      <th scope="col">Ponto Y</th>
+      <th scope="col">Disponíveis</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Nome</td>
+            <td>@item.PontoX</td>
+            <td>@item.PontoY</td>
+            <td>@item.CompartimentosDisponiveis()</td>
+            <td><a asp-controller="Compartimentos" asp-action="Listar" asp-route-armarioid="@item.ArmarioId">Listar compartimentos</a></td>
+            <td><a asp-controller="Compartimentos" asp-action="Cadastrar" asp-route-armarioid="@item.ArmarioId">Adicionar compartimento</a></td>
+        </tr>
+    }
+  </tbody>
+</table>
+

@@ -1,0 +1,32 @@
+@model ProvaDs2.Models.Armario
+ 
+@{
+    ViewData["Title"] = "Cadastrar Armario";
+}
+ 
+<h2>Cadastrar armario</h2>
+<form method="post" asp-controller="Armarios" asp-action="Cadastrar">
+  <div class="mb-3">
+    <label asp-for="Nome" class="form-label"></label>
+    <input asp-for="Nome" class="form-control">
+    <span asp-validation-for="Nome" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="PontoX" class="form-label"></label>
+    <input asp-for="PontoX" class="form-control">
+    <span asp-validation-for="PontoX" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="PontoY" class="form-label"></label>
+    <input asp-for="PontoY" class="form-control">
+    <span asp-validation-for="PontoY" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label for="cpfdodono" class="form-label">CPF Do Administrador</label>
+    <input type="text" name="CPF" id="cpfdodono" class="form-control">
+    <span for="cpfdodono" class="text-danger"></span>
+      </div>
+  <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>
+
+

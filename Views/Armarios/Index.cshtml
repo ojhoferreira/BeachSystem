@@ -1,0 +1,53 @@
+@model IEnumerable<ProvaDs2.Models.Armario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PontoX)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PontoY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdministradorId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PontoX)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PontoY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdministradorId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ArmarioId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ArmarioId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ArmarioId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
